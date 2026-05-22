@@ -48,6 +48,16 @@
         </p>
 
     </section>
+     <section class="search-section container">
+
+        <input 
+            type="text"
+            id="searchInput"
+            placeholder="Search haircare products..."
+            onkeyup="searchProducts()"
+        >
+
+    </section>
 
     <!-- PRODUCT SECTION -->
 
@@ -61,7 +71,7 @@
 
             <div class="card-content">
 
-                <h2>Kérastase Gloss</h2>
+                <h2 class="product-name">Kérastase Gloss</h2>
 
                 <p>
                     Smooth glossy hair serum for shiny,
@@ -85,8 +95,7 @@
             <img src="../images/61AueWpVq+L._AC_UL480_FMwebp_QL65_.webp" alt="Hair Product">
 
             <div class="card-content">
-
-                <h2>Kérastase Genesis Shampoo</h2>
+                <h2 class="product-name">Kérastase Genesis Shampoo</h2>
 
                 <p>
                     Strengthening anti-hair fall shampoo for healthy, hydrated, and resilient hair.
@@ -119,11 +128,7 @@
 
             <div class="footer-links">
 
-                <a href="#">Instagram</a>
-
-                <a href="#">TikTok</a>
-
-                <a href="#">Pinterest</a>
+                <a href="https://www.instagram.com/bellamonroeofficial?igsh=MXkwM2NkcDZlcnFicg==">Instagram</a>
 
             </div>
 
@@ -135,5 +140,34 @@
 
     </footer>
 
+    <script>
+
+function searchProducts() {
+
+    let input = document.getElementById("searchInput").value.toLowerCase();
+
+    let cards = document.querySelectorAll(".product-card");
+
+    cards.forEach(function(card) {
+
+        let productName = card.querySelector(".product-name").innerText.toLowerCase();
+
+        if(productName.includes(input)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
 </body>
 </html>
