@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Makeup Collection</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <h1 class="brand-title">
+                Makeup Collection
+            </h1>
+
+            <p class="brand-subtitle">
+                Luxury Makeup Essentials
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero container">
+
+        <h1>Premium Makeup Products</h1>
+
+        <p>
+            Explore luxury lipsticks, foundations,
+            glosses, and trending makeup essentials.
+        </p>
+
+    </section>
+
+    <!-- SEARCH BAR -->
+
+    <section class="search-section container">
+
+        <input 
+            type="text"
+            id="searchInput"
+            placeholder="Search makeup products..."
+            onkeyup="searchProducts()"
+        >
+
+    </section>
+
+    <!-- PRODUCT SECTION -->
+
+    <section class="product-section container">
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <img src="../images/71Xk8ObeATL._SL1500_.jpg" alt="Makeup Product">
+
+            <div class="card-content">
+
+                <h2 class="product-name">
+                    HYUE Velvette Kiss Matte Bullet Lipstick 
+                </h2>
+
+                <p>
+                    Smooth glossy lip serum with
+                    long-lasting shine and hydration.
+                </p>
+
+                <a href="https://amzn.to/3PBE3u4" target="_blank">
+
+                    <button>Shop Now</button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 2 -->
+
+        
+
+        <!-- PRODUCT 3 -->
+    </section>
+
+    <!-- DETAILS SECTION -->
+
+    <section class="product-details container">
+
+        <div class="detail-card">
+
+            <h2>Why Choose Our Makeup?</h2>
+
+            <p>
+                Our makeup collection is designed
+                to deliver elegant beauty looks with
+                smooth application and long-lasting finish.
+            </p>
+
+        </div>
+
+        <div class="detail-card">
+
+            <h2>Benefits</h2>
+
+            <ul>
+
+                <li>Long-lasting premium finish</li>
+
+                <li>Lightweight comfortable formula</li>
+
+                <li>Luxury beauty essentials</li>
+
+                <li>Suitable for everyday makeup</li>
+
+                <li>Glow-enhancing makeup products</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <h2>Glow Beauty Store</h2>
+
+            <p>
+                Premium beauty and self-care essentials
+                for everyday glow and confidence.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="https://www.instagram.com/bellamonroeofficial?igsh=MXkwM2NkcDZlcnFicg==">
+                    Instagram
+                </a>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Glow Beauty Store. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- SEARCH SCRIPT -->
+
+    <script>
+
+    function searchProducts() {
+
+        let input = document.getElementById("searchInput").value.toLowerCase();
+
+        let cards = document.querySelectorAll(".product-card");
+
+        cards.forEach(function(card) {
+
+            let productName = card.querySelector(".product-name").innerText.toLowerCase();
+
+            if(productName.includes(input)) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+    </script>
+
+</body>
+</html>
