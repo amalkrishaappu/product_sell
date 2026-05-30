@@ -1,0 +1,160 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skincare Collection</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <h1 class="brand-title">
+                Skincare Collection
+            </h1>
+
+            <p class="brand-subtitle">
+                Healthy Skin Starts Here
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero container">
+
+        <h1>Premium Skincare Products</h1>
+
+        <p>
+            Discover cleansers, serums, moisturizers,
+            sunscreens and skincare essentials.
+        </p>
+
+    </section>
+
+    <!-- SEARCH BAR -->
+
+    <section class="search-section container">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search skincare products..."
+            onkeyup="searchProducts()"
+        >
+
+    </section>
+
+    <!-- PRODUCT SECTION -->
+
+    <section class="product-section container">
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <img src="../images/61vmEu4MuZL._SL1500_.jpg" alt="CeraVe Cleanser">
+
+            <div class="card-content">
+
+                <h2 class="product-name">
+                    Minimalist Vitamin C 10% Face Serum
+                </h2>
+
+                <p>
+                   A lightweight Vitamin C serum formulated with 10% Vitamin C, Acetyl Glucosamine, Polyhydroxy Acid (PHA), and Centella to help brighten dull skin, improve skin radiance, and support an even-looking complexion. Suitable for all skin types.
+                </p>
+
+                <a href="https://amzn.to/4fPphub" target="_blank">
+
+                    <button>Shop Now</button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <h2>Glow Beauty Store</h2>
+
+            <p>
+                Premium beauty and self-care essentials
+                for everyday glow and confidence.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="https://www.instagram.com/bellamonroeofficial?igsh=MXkwM2NkcDZlcnFicg==">
+                    Instagram
+                </a>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Glow Beauty Store. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- SEARCH SCRIPT -->
+
+    <script>
+
+    function searchProducts() {
+
+        let input = document.getElementById("searchInput").value.toLowerCase();
+
+        let cards = document.querySelectorAll(".product-card");
+
+        cards.forEach(function(card) {
+
+            let productName = card.querySelector(".product-name").innerText.toLowerCase();
+
+            if(productName.includes(input)) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+    </script>
+
+</body>
+</html>
+```
