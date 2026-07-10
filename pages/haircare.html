@@ -1,195 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Haircare Collection</title>
-
-    <link rel="stylesheet" href="../style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-    <!-- HEADER -->
-
-    <header class="header">
-
-        <div class="container header-content">
-
-            <h1 class="brand-title">
-                Haircare Collection
-            </h1>
-
-            <p class="brand-subtitle">
-                Luxury Hair Essentials
-            </p>
-
-        </div>
-
-    </header>
-
-    <!-- HERO -->
-
-    <section class="hero container">
-
-        <h1>Premium Hair Care Products</h1>
-
-        <p>
-            Discover glossy hair serums, nourishing oils,
-            shampoos, and premium haircare essentials.
-        </p>
-
-    </section>
-     <section class="search-section container">
-
-        <input 
-            type="text"
-            id="searchInput"
-            placeholder="Search haircare products..."
-            onkeyup="searchProducts()"
-        >
-
-    </section>
-
-    <!-- PRODUCT SECTION -->
-
-    <section class="product-section container">
-
-        <!-- PRODUCT 1 -->
-
-        <div class="product-card">
-
-            <img src="../images/61-E4RH9cDL._SL1500_.jpg" alt="Hair Product">
-
-            <div class="card-content">
-
-                <h2 class="product-name">Kérastase Gloss</h2>
-
-                <p>
-                    Smooth glossy hair serum for shiny,
-                    healthy-looking hair.
-                </p>
-
-                <a href="https://amzn.to/4uvSj6M" target="_blank">
-
-                    <button>Shop Now</button>
-
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- PRODUCT 2 -->
-
-        <div class="product-card">
-
-            <img src="../images/61AueWpVq+L._AC_UL480_FMwebp_QL65_.webp" alt="Hair Product">
-
-            <div class="card-content">
-                <h2 class="product-name">Kérastase Genesis Shampoo</h2>
-
-                <p>
-                    Strengthening anti-hair fall shampoo for healthy, hydrated, and resilient hair.
-                </p>
-
-                <a href="https://amzn.to/4dY6ewt" target="_blank">
-
-                    <button>Shop Now</button>
-
-                </a>
-
-            </div>
-
-        </div>
-        <!---product 3-->
-         <div class="product-card">
-
-            <img src="../images/61oQHnhKY6L._SL1200_.jpg" alt="Hair Product">
-
-            <div class="card-content">
-                <h2 class="product-name">Soulflower Hair Growth Serum</h2>
-
-                <p>
-                   A lightweight hair growth serum powered by Rosemary, Redensyl, Anagain, and Melanogray to help support stronger, fuller-looking hair while reducing the appearance of thinning. Its non-greasy, fragrance-free formula is suitable for daily scalp care.
-                </p>
-
-                <a href="https://amzn.to/4uasNmK" target="_blank">
-
-                    <button>Shop Now</button>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-       
-    </section>
-
-
-    <footer>
-
-        <div class="container footer-content">
-
-            <h2>Glow Beauty Store</h2>
-
-            <p>
-                Premium beauty and self-care essentials
-                for everyday glow and confidence.
-            </p>
-
-            <div class="footer-links">
-
-                <a href="https://www.instagram.com/bellamonroeofficial?igsh=MXkwM2NkcDZlcnFicg==">Instagram</a>
-
-            </div>
-
-            <p class="copyright">
-                © 2026 Glow Beauty Store. All Rights Reserved.
-            </p>
-
-        </div>
-
-    </footer>
-
-    <script>
-
-function searchProducts() {
-
-    let input = document.getElementById("searchInput").value.toLowerCase();
-
-    let cards = document.querySelectorAll(".product-card");
-
-    cards.forEach(function(card) {
-
-        let productName = card.querySelector(".product-name").innerText.toLowerCase();
-
-        if(productName.includes(input)) {
-
-            card.style.display = "block";
-
-        } else {
-
-            card.style.display = "none";
-
+    <title>Glow Beauty | The Curated Collection</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1A252C; 
+            --accent: #D4AF37; 
+            --bg-color: #FAFAFA; 
+            --card-bg: #FFFFFF;
+            --text-main: #2A2A2A;
+            --text-muted: #7A7A7A;
         }
 
-    });
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-</script>
+        /* Sticky Glassmorphism Header */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-</body>
+        .brand {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        /* Elegant Search Bar */
+        .search-container input {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #EBEBEB;
+            border-radius: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            width: 300px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            outline: none;
+            background-color: #F8F9FA;
+            color: var(--primary);
+        }
+
+        .search-container input:focus {
+            border-color: var(--accent);
+            background-color: #FFFFFF;
+            width: 340px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+
+        .search-container input::placeholder {
+            color: #A0A0A0;
+        }
+
+        /* Hero Banner */
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #FDFBFB 0%, #FAFAFA 100%);
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .hero h2 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Responsive CSS Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 3rem;
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Entrance Animation Keyframes */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Premium Card Design */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #F9F9F9;
+            opacity: 0;
+            animation: fadeUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: #F4F4F4; 
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 2rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* Brand Tag styling */
+        .card-brand {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-title {
+            font-family: 'Lora', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .card-price {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .card-action {
+            margin-top: auto;
+        }
+
+        /* Refined Button */
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: #FFFFFF;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1.2rem;
+                padding: 1.5rem;
+            }
+            .search-container input {
+                width: 100%;
+            }
+            .search-container input:focus {
+                width: 100%;
+            }
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .card-img-wrapper {
+                height: 350px;
+            }
+            .product-grid {
+                gap: 2rem;
+                padding: 3rem 5%;
+            }
+        }
+        /* ==========================
+           Premium Footer Styles 
+           ========================== */
+        .site-footer {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 4rem 5% 1rem;
+            margin-top: 4rem; /* Adds breathing room below your products */
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-col p {
+            color: #B0B0B0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .footer-col h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #B0B0B0;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(3px); /* Subtle slide effect on hover */
+        }
+
+        /* Elegant Subscribe Input */
+        .subscribe-box {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .subscribe-box input {
+            padding: 0.9rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #2A3B47; /* Slightly lighter than the background */
+            color: #FFF;
+        }
+        
+        .subscribe-box input::placeholder {
+            color: #888;
+        }
+
+        .subscribe-box button {
+            padding: 0.9rem 1.2rem;
+            border: none;
+            background-color: var(--accent);
+            color: #FFF;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .subscribe-box button:hover {
+            background-color: #bfa133;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666666;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .site-footer {
+                padding: 3rem 1.5rem 1rem;
+            }
+        }
+        /* ==========================
+           Elegant Back Button 
+           ========================== */
+        .back-wrapper {
+            max-width: 1400px;
+            margin: 1.5rem auto -3.5rem; /* Positions it nicely over the hero background */
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+            animation: fadeUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .elegant-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .elegant-back-btn:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .elegant-back-btn span {
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="brand">Glow Beauty</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Discover products..." onkeyup="filterProducts()">
+        </div>
+    </nav>
+
+    <div class="back-wrapper">
+        <a href="index.html" class="elegant-back-btn">
+            <span>&#8592;</span> Back to Home
+        </a>
+    </div>
+
+    <header class="hero">
+        <h2>The Haircare Edit</h2>
+        <p>Elevate your daily routine with our hand-picked essentials, designed to unveil your most luminous complexion yet.</p>
+    </header>
+
+    <main class="product-grid" id="productGrid"></main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="footer-brand">Glow Beauty</h3>
+                <p>Elevating your daily routine with hand-picked, premium beauty essentials designed to unveil your most luminous complexion.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul class="footer-links">
+                    <li><a href="skincare.html">Skincare Edit</a></li>
+                    <li><a href="makeup.html">Makeup Edit</a></li>
+                    <li><a href="haircare.html">Haircare Edit</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Our Philosophy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Insider Access</h4>
+                <p>Join our list for exclusive offers and new product reveals.</p>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Email address">
+                    <button>Join</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Glow Beauty. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+
+    <script>
+        const grid = document.getElementById('productGrid');
+
+        // Fetch the data from the external JSON file
+        fetch('../data/products.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                // Filter for haircare products only
+                const haircareProducts = data.products.filter(product => product.category === 'haircare');
+                
+                // Added index for staggered animations
+                haircareProducts.forEach((product, index) => {
+                    const article = document.createElement('article');
+                    article.className = 'card product-item';
+                    
+                    // Stagger the fade-in animation by 0.15s per card
+                    article.style.animationDelay = `${index * 0.15}s`;
+
+                    article.innerHTML = `
+                        <div class="card-img-wrapper">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-brand">${product.brand}</span>
+                            <h3 class="card-title name">${product.name}</h3>
+                            <div class="card-price">${product.price}</div>
+                            
+                            <div class="card-action">
+                                <a href="product.html?slug=${product.slug}" class="btn">View Details</a>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(article);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading products:', error);
+                grid.innerHTML = `<p style="text-align:center; grid-column: 1/-1; color: #666;">We are currently refreshing our collection. Please check back shortly.</p>`;
+            });
+
+        // Search Filter
+        function filterProducts() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.product-item');
+            
+            items.forEach(item => {
+                const name = item.querySelector('.name').innerText.toLowerCase();
+                item.style.display = name.includes(input) ? 'flex' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>

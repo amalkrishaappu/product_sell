@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Beauty | Discover Beauty Products Worth Every Penny</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* === CSS RESET & GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #faf9f8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        .stars {
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        /* === 1. NAVIGATION BAR === */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #888;
+        }
+
+        /* === 2. HERO SECTION === */
+        .hero {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background: linear-gradient(to right,#f8efe9,#ffffff);
+    overflow: hidden;
+}
+
+.hero-content{
+    flex:1;
+    max-width:550px;
+}
+
+.hero-content h1{
+    font-size:3.8rem;
+    line-height:1.2;
+    color:#FFFFFF;
+    margin:20px 0;
+}
+
+.hero-subtitle{
+    font-size:1.1rem;
+    color:#555;
+    margin-bottom:35px;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:520px;
+    height:700px;
+    object-fit:cover;
+    border-radius:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero-image{
+    margin-top:40px;
+}
+
+.hero-image img{
+    height:500px;
+}
+}
+
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* === 3. STATS SECTION (Why People Love Us) === */
+        .stats-section {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #f7e6d9;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ccc;
+        }
+
+        /* === 4. FEATURED CATEGORIES === */
+        .categories-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            position: relative;
+            height: 480px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+
+        .category-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            width: 100%;
+        }
+
+        .category-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .cat-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #eaeaea;
+            margin-bottom: 15px;
+        }
+
+        .cat-list {
+            margin-bottom: 25px;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        .cat-list li {
+            margin-bottom: 5px;
+        }
+
+        .explore-link {
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .category-card:hover .explore-link {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .cat-skin { background-image: url('images/cat-skincare.jpg'); }
+        .cat-makeup { background-image: url('images/cat-makeup.jpg'); }
+        .cat-hair { background-image: url('images/cat-haircare.jpg'); }
+
+        /* === 5. BEST PICKS SECTION === */
+        .picks-section {
+            padding: 80px 0;
+        }
+
+        .picks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .pick-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .pick-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #222;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pick-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .pick-body {
+            padding: 30px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pick-card h3 {
+            font-size: 1.4rem;
+            margin: 10px 0 15px;
+            color: #222;
+        }
+
+        .feature-list {
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .feature-list i {
+            color: #27ae60;
+            margin-top: 2px;
+        }
+
+        .btn-affiliate {
+            display: block;
+            background-color: #f7e6d9;
+            color: #222;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-affiliate:hover {
+            background-color: #e5d1c1;
+        }
+
+        /* === 6. OUR PROCESS SECTION === */
+        .process-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .process-card {
+            background: #faf9f8;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid #222;
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-icon {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .process-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .process-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* === 7. EXPANDED FOOTER === */
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 80px 20px 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #f7e6d9;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disclosure {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .disclosure strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .navbar { padding: 15px 20px; }
+        }
+        img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+        }   
+        .hero-image img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    aspect-ratio: 4 / 5; /* Keeps a beautiful vertical portrait ratio automatically */
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.2);
+}
+
+@media(max-width:900px){
+    .hero-image img {
+        max-width: 400px; /* Scales down elegantly on mobile */
+    }
+}
+
+.category-card {
+    position: relative;
+    height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Adjust card height slightly on smaller screens so they look tight and proportional */
+@media (max-width: 480px) {
+    .category-card {
+        height: 380px;
+    }
+}
+
+.pick-image {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff; /* Protects look if image has transparent background */
+}
+
+.pick-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* Switch to 'contain' if products get cropped awkwardly, or keep 'cover' for full bleeds */
+    transition: transform 0.3s ease;
+}
+/* 1. Force the image to fill the background completely */
+.category-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Pushes it behind everything */
+}
+
+/* 2. Ensure the dark gradient layer sits on top of the image */
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.3));
+    z-index: 1; 
+}
+
+/* 3. Force the text content to stay safely on top */
+.category-content {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+}
+/* ==========================================================================
+   CATEGORY CARD HOVER EFFECTS
+   ========================================================================== */
+
+/* Ensure the card container clips the scaling image safely */
+.category-card {
+    position: relative;
+    height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 1. Image Zoom Setup */
+.category-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    /* Smooth transition for the zoom effect */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Zoom the image on card hover */
+.category-card:hover img {
+    transform: scale(1.08);
+}
+
+/* 2. Fade/Deepen the dark overlay on hover */
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.2) 80%);
+    z-index: 1;
+    opacity: 0.85;
+    transition: opacity 0.4s ease;
+}
+
+.category-card:hover::before {
+    opacity: 1; /* Darkens background slightly to make popped text easier to read */
+}
+
+/* 3. Text Popping & Hiding Mechanism */
+.category-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* Hide the meta details and product lists initially */
+.cat-meta,
+.cat-list {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(20px); /* Positioned slightly lower */
+    overflow: hidden;
+    margin: 0; /* Reset margins so collapse is perfectly clean */
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), max-height 0.4s ease, margin 0.4s ease;
+}
+
+/* Reveal and pop them when the user hovers over the parent card */
+.category-card:hover .cat-meta {
+    opacity: 1;
+    max-height: 50px; /* Gives it enough space to render fully */
+    transform: translateY(0);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.category-card:hover .cat-list {
+    opacity: 1;
+    max-height: 150px; /* Gives room for the 3 list items */
+    transform: translateY(0);
+    margin-bottom: 25px;
+}
+
+/* Extra touch: Slightly elevate the whole card frame on hover */
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+/* ==========================================================================
+   BEST PICKS HOVER EFFECTS
+   ========================================================================== */
+
+/* 1. Setup the main card container */
+.pick-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Clean custom transition for the card movement */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Elevate the card on hover */
+.pick-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* 2. Setup the image container to clip the zoom effect safely */
+.pick-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden; /* Vital to stop the image scaling past card boundaries */
+    position: relative;
+}
+
+.pick-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Smooth transition for the scaling animation */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Zoom product image on card hover */
+.pick-card:hover .pick-image img {
+    transform: scale(1.06);
+}
+
+/* 3. Button Hiding & Popping Mechanism */
+.btn-affiliate {
+    display: block;
+    background-color: #f7e6d9;
+    color: #222;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    
+    /* Initially hide the button and move it down slightly */
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(15px);
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    
+    /* Transition parameters matching the categories style */
+    transition: opacity 0.35s ease, 
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                max-height 0.35s ease, 
+                padding 0.35s ease,
+                background-color 0.3s ease; /* Keeps the hover color tint smooth */
+}
+
+/* Reveal and pop the button when card is hovered */
+.pick-card:hover .btn-affiliate {
+    opacity: 1;
+    max-height: 50px; /* Gives space to let the button display fully */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    transform: translateY(0);
+}
+
+/* Button background shifts gently when directly hovered */
+.btn-affiliate:hover {
+    background-color: #e5d1c1;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+
+    background:url("images/hero.jpeg") center center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:#fff;
+    max-width:900px;
+    padding:20px;
+}
+
+.kicker{
+    display:block;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:35px;
+}
+
+.hero h1{
+    font-size:72px;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero-subtitle{
+    font-size:24px;
+    margin-bottom:45px;
+    opacity:.95;
+}
+
+.hero-btns{
+    display:flex;
+    justify-content:center;
+}
+
+.btn-primary{
+    display:inline-block;
+    padding:18px 50px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:22px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:#f5f5f5;
+}
+
+@media(max-width:992px){
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero-subtitle{
+    font-size:20px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+    height:90vh;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero-subtitle{
+    font-size:17px;
+}
+
+.btn-primary{
+    font-size:18px;
+    padding:15px 35px;
+}
+
+.kicker{
+    font-size:16px;
+    letter-spacing:3px;
+}
+
+}
+.trust-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .trust-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .trust-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .trust-item p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-monogram {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid #222; /* Matches the text */
+    border-radius: 50px; /* Makes it a perfect clean circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #222;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+/* Premium fill inversion effect on hover */
+.brand-logo:hover .logo-monogram {
+    background-color: #222;
+    color: #fff;
+}
+.brand-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+}
+
+.logo-text h2{
+    margin:0;
+    font-size:24px;
+    color:#222;
+    line-height:1;
+}
+
+.logo-text small{
+    display:block;
+    font-size:12px;
+    color:#777;
+    letter-spacing:1px;
+}
+/* Ensure buttons are arranged horizontally */
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Modern way to space elements */
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
+}
+
+/* Style for the secondary button */
+.btn-secondary {
+    display: inline-block;
+    padding: 18px 50px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #111;
+    transform: translateY(-3px);
+}
+
+/* Adjust for smaller screens */
+@media(max-width:768px){
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-primary, .btn-secondary {
+        font-size: 18px;
+        padding: 15px 35px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="brand-logo">
+    <div class="logo-monogram">GB</div>
+    <div class="logo-text">
+        <h2>Glow Beauty</h2>
+        <small>Beauty Reviews</small>
+    </div>
+</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#picks">Best Picks</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <span class="kicker">GLOW BEAUTY</span>
+
+        <h1>
+            Find Beauty Products<br>
+            You'll Actually Love
+        </h1>
+
+        <p class="hero-subtitle">
+            Honest Reviews • Top Picks • Best Deals
+        </p>
+
+        <div class="hero-btns">
+            <div class="hero-btns">
+    <a href="#categories" class="btn-primary">Explore Collections</a>
+    <a href="#picks" class="btn-secondary" style="margin-left: 20px;">View Best Deals</a>
+</div>
+        </div>
+    </div>
+    </header>
+
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>10,000+</h3>
+                <p>Monthly Readers</p>
+            </div>
+            <div class="stat-item">
+                <h3>300+</h3>
+                <p>Products Reviewed</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Honest Recommendations</p>
+            </div>
+            <div class="stat-item">
+                <h3>Weekly</h3>
+                <p>Updated Deals</p>
+            </div>
+        </div>
+    </section>
+
+     <section class="trust-section">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <div class="icon">⭐</div>
+                <h3>Handpicked Products</h3>
+                <p>Every recommendation is carefully selected.</p>
+            </div>
+            <div class="trust-item">
+                <div class="icon">🌿</div>
+                <h3>Beauty Experts</h3>
+                <p>Products chosen based on quality and reviews.</p>
+            </div>
+            <div class="trust-item">
+                <div class="icon">💰</div>
+                <h3>Best Value</h3>
+                <p>We compare prices and ratings to find the best.</p>
+            </div>
+            <div class="trust-item">
+                <div class="icon">🔄</div>
+                <h3>Updated Regularly</h3>
+                <p>New recommendations added every single week.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="categories" class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                
+                <a href="pages/skincare.html" class="category-card cat-skin">
+                    <img src="images/photo-1556228578-0d85b1a4d571.avif" alt="Skincare">
+                    <div class="category-content">
+                        <h3>Skincare</h3>
+                        <div class="cat-meta">
+                            <span>40+ Products</span>
+                            <span>•</span>
+                            <span class="stars">★★★★★</span>
+                            <span>•</span>
+                            <span>Updated Weekly</span>
+                        </div>
+                        <ul class="cat-list">
+                            <li>Serums</li>
+                            <li>Moisturizers</li>
+                            <li>Cleansers</li>
+                        </ul>
+                        <span class="explore-link">Explore <i class="ri-arrow-right-line"></i></span>
+                    </div>
+                </a>
+
+                <a href="pages/makeup.html" class="category-card cat-makeup">
+                    <img src="images/photo-1596462502278-27bfdc403348.avif" alt="Makeup">
+                    <div class="category-content">
+                        <h3>Makeup</h3>
+                        <div class="cat-meta">
+                            <span>65+ Products</span>
+                            <span>•</span>
+                            <span class="stars">★★★★★</span>
+                            <span>•</span>
+                            <span>Updated Weekly</span>
+                        </div>
+                        <ul class="cat-list">
+                            <li>Foundations</li>
+                            <li>Lipsticks</li>
+                            <li>Eye Palettes</li>
+                        </ul>
+                        <span class="explore-link">Explore <i class="ri-arrow-right-line"></i></span>
+                    </div>
+                </a>
+
+                <a href="pages/haircare.html" class="category-card cat-hair">
+                    <img src="images/download1.webp" alt="Haircare">
+                    <div class="category-content">
+                        <h3>Haircare</h3>
+                        <div class="cat-meta">
+                            <span>30+ Products</span>
+                            <span>•</span>
+                            <span class="stars">★★★★★</span>
+                            <span>•</span>
+                            <span>Updated Weekly</span>
+                        </div>
+                        <ul class="cat-list">
+                            <li>Shampoos</li>
+                            <li>Hair Masks</li>
+                            <li>Styling Tools</li>
+                        </ul>
+                        <span class="explore-link">Explore <i class="ri-arrow-right-line"></i></span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="picks" class="picks-section">
+        <div class="container">
+            <h2 class="section-title">Current Best Picks</h2>
+            <div class="picks-grid">
+                
+                <div class="pick-card">
+                    <div class="badge"><i class="ri-trophy-fill"></i> Editor's Choice</div>
+                    <div class="pick-image">
+                        <img src="images/61vmEu4MuZL._SL1500_.jpg" alt="Vitamin C Serum">
+                    </div>
+                    <div class="pick-body">
+                        <div class="stars">★★★★★</div>
+                        <h3>Minimalist Vitamin C Serum</h3>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Brightens skin naturally</li>
+                            <li><i class="ri-check-line"></i> Reduces dark spots</li>
+                            <li><i class="ri-check-line"></i> Budget-friendly</li>
+                        </ul>
+                        <a href="pages/product.html?slug=minimalist-vitamin-c-serum" class="btn-affiliate">View Deal <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+                <div class="pick-card">
+                    <div class="badge"><i class="ri-trophy-fill"></i> Editor's Choice</div>
+                    <div class="pick-image">
+                        <img src="images/OIP.webp" alt="Hydrating Foundation">
+                    </div>
+                    <div class="pick-body">
+                        <div class="stars">★★★★★</div>
+                        <h3>Dewy Hydrating Foundation</h3>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Flawless dewy finish</li>
+                            <li><i class="ri-check-line"></i> Medium buildable coverage</li>
+                            <li><i class="ri-check-line"></i> Infused with hyaluronic acid</li>
+                        </ul>
+                        <a href="pages/product.html?slug=Minimalist Vitamin C 10% Face Serum" class="btn-affiliate">View Deal <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+                <div class="pick-card">
+                    <div class="badge"><i class="ri-trophy-fill"></i> Editor's Choice</div>
+                    <div class="pick-image">
+                        <img src="images/download.webp" alt="Leave-In Conditioner">
+                    </div>
+                    <div class="pick-body">
+                        <div class="stars">★★★★★</div>
+                        <h3>Miracle Leave-In Conditioner</h3>
+                        <ul class="feature-list">
+                            <li><i class="ri-check-line"></i> Ultimate frizz control</li>
+                            <li><i class="ri-check-line"></i> Heat protection up to 450°</li>
+                            <li><i class="ri-check-line"></i> Sulfate and paraben free</li>
+                        </ul>
+                        <a href="pages/product.html?slug=HYUE Velvette Kiss Matte Bullet Lipstick" class="btn-affiliate">View Deal <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Our Review Process -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">How We Choose The Best</h2>
+            <div class="process-grid">
+                
+                <!-- Process 1 -->
+                <div class="process-card">
+                    <div class="process-icon"><i class="ri-flask-line"></i></div>
+                    <h3>Ingredient Analysis</h3>
+                    <p>We look beyond the marketing claims. We analyze the active ingredients to ensure the products are safe, effective, and backed by dermatological science.</p>
+                </div>
+
+                <!-- Process 2 -->
+                <div class="process-card">
+                    <div class="process-icon"><i class="ri-group-line"></i></div>
+                    <h3>Buyer Consensus</h3>
+                    <p>We aggregate thousands of verified reviews from major retailers to see how the product performs on different skin and hair types in the real world.</p>
+                </div>
+
+                <!-- Process 3 -->
+                <div class="process-card">
+                    <div class="process-icon"><i class="ri-wallet-3-line"></i></div>
+                    <h3>Value for Money</h3>
+                    <p>A high price tag doesn't always mean better quality. We compare the cost per ounce against performance to ensure you get the absolute best value.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            
+            <div class="footer-col">
+                <h4>Glow Beauty</h4>
+                <div class="disclosure">
+                    <strong>Affiliate Disclosure</strong>
+                    Some links on this website are affiliate links. We may earn a commission if you click on these links and make a purchase, at no extra cost to you. This helps support our site.
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#picks">Best Picks</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Affiliate Disclaimer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/bellamonroeofficial?igsh=MXkwM2NkcDZlcnFicg==" class="social-link"><i class="ri-instagram-line"></i> Instagram</a></li>
+                    <li><a href="https://pin.it/3jK0f5f7x" class="social-link"><i class="ri-pinterest-line"></i> Pinterest</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 Glow Beauty. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

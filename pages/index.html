@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Collections | Glow Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+    /* 1. Global Reset & Typography */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #222; background-color: #FAF9F8; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* 2. Navigation */
+    .navbar { background: #fff; padding: 20px 0; border-bottom: 1px solid #eee; }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #222; font-weight: 500; font-size: 0.95rem; }
+
+    /* 3. Hero Section */
+    .cat-hero { padding: 80px 0; text-align: center; }
+    .cat-hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 15px; }
+
+    /* 4. Alternating Content Rows */
+    .category-row { padding: 80px 0; transition: all 0.4s ease; background-color: #fff; }
+    .category-row.bg-light { background-color: #FAF9F8 !important; }
+    .category-row:hover { transform: translateY(-5px); }
+    
+    .row-inner { display: flex; align-items: center; gap: 60px; }
+    .row-reverse .row-inner { flex-direction: row-reverse; }
+    
+    .row-image { flex: 1; }
+    .row-image img { width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+    
+    .row-content { flex: 1; }
+    .row-content h3 { font-size: 2.5rem; margin-bottom: 15px; }
+    .row-meta { font-weight: 600; margin: 15px 0; color: #666; font-size: 0.9rem; letter-spacing: 0.5px; }
+    .row-list { list-style: none; margin-bottom: 25px; }
+    .row-list li { margin-bottom: 8px; color: #444; }
+    
+    .btn-link { 
+        display: inline-block; 
+        background: #222; 
+        color: #fff; 
+        padding: 14px 30px; 
+        border-radius: 40px; 
+        text-decoration: none; 
+        font-weight: 600; 
+        transition: 0.3s;
+    }
+    .btn-link:hover { background: #E8C4C4; color: #222; }
+
+    /* 5. Footer Styling */
+    footer { background: #222; color: #fff; padding: 60px 0 30px; margin-top: 50px; }
+    .footer-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 40px; 
+        margin-bottom: 40px; 
+    }
+    .footer-col h4 { margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { color: #aaa; text-decoration: none; transition: 0.3s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-col p { color: #777; font-size: 0.9rem; line-height: 1.5; }
+    .copyright { border-top: 1px solid #444; padding-top: 20px; text-align: center; font-size: 0.85rem; color: #666; }
+
+    /* 6. Responsive Mobile Fix */
+    @media (max-width: 768px) {
+        .row-inner { flex-direction: column; text-align: center; gap: 30px; }
+        .row-reverse .row-inner { flex-direction: column; }
+        .cat-hero h1 { font-size: 2.5rem; }
+    }
+    .navbar { 
+    background: #fff; 
+    padding: 25px 0; 
+    border-bottom: 1px solid #f0f0f0; 
+    position: sticky; /* Keeps it visible while scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-inner { 
+    display: grid; 
+    grid-template-columns: 1fr auto 1fr; /* Perfect centering for the logo */
+    align-items: center; 
+}
+
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    letter-spacing: 4px; /* Premium spacing effect */
+    color: #222;
+    cursor: pointer;
+}
+
+.nav-left { justify-self: start; font-size: 1.5rem; cursor: pointer; }
+.nav-right { justify-self: end; display: flex; gap: 20px; font-size: 1.5rem; }
+.nav-right a { color: #222; transition: 0.3s; }
+.nav-right a:hover { color: #E8C4C4; }
+.nav-left a{
+    color: #222;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.nav-left a:hover{
+    color: #E8C4C4;
+}
+</style>
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="container nav-inner">
+        <!-- Optional: Left side icon for balance -->
+       <div class="nav-left">
+            <a href="../landing.html" aria-label="Home">
+            <i class="ri-menu-line"></i>
+            </a>
+        </div>
+        
+        <!-- Center Logo (The star of the show) -->
+        <div class="logo">GLOW BEAUTY</div>
+        
+        <!-- Right side: Actions only -->
+        <div class="nav-right">
+            <a href="#"><i class="ri-search-line"></i></a>
+            <a href="#"><i class="ri-heart-line"></i></a>
+        </div>
+    </div>
+    </nav>
+
+    <section class="cat-hero">
+        <div class="container">
+            <h1>Beauty Collections</h1>
+            <p>Explore carefully selected skincare, makeup, haircare and beauty essentials.</p>
+        </div>
+    </section>
+
+    <!-- Skincare Row -->
+    <section class="category-row">
+        <div class="container row-inner">
+            <div class="row-image">
+                <img src="../images\photo-1556228578-0d85b1a4d571.avif" alt="Skincare">
+            </div>
+            <div class="row-content">
+                <h3>Skincare</h3>
+                <p>Discover dermatologist-recommended serums, moisturizers, cleansers, sunscreens, and treatments for every skin type.</p>
+                <div class="row-meta">40+ Products • ★★★★★ • Updated Weekly</div>
+                <ul class="row-list">
+                    <li>✓ Serums</li><li>✓ Moisturizers</li><li>✓ Sunscreens</li><li>✓ Face Wash</li>
+                </ul>
+                <a href="../pages/skincare.html" class="btn-link">View Skincare Collection →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Makeup Row (Reversed) -->
+    <section class="category-row row-reverse bg-light">
+        <div class="container row-inner">
+            <div class="row-image">
+                <img src="../images/photo-1596462502278-27bfdc403348.avif" alt="Makeup">
+            </div>
+            <div class="row-content">
+                <h3>Makeup</h3>
+                <p>Explore foundations, lipsticks, concealers, mascaras, and beauty essentials chosen for quality and performance.</p>
+                <div class="row-meta">60+ Products • ★★★★★ • Updated Weekly</div>
+                <ul class="row-list">
+                    <li>✓ Foundation</li><li>✓ Lipstick</li><li>✓ Concealer</li><li>✓ Eye Makeup</li>
+                </ul>
+                <a href="../pages/makeup.html" class="btn-link">View Makeup Collection →</a>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Haircare Row -->
+    <section class="category-row">
+        <div class="container row-inner">
+            <div class="row-image">
+                <img src="../images\download1.webp" alt="Haircare">
+            </div>
+            <div class="row-content">
+                <h3>Haircare</h3>
+                <p>Find shampoos, conditioners, hair oils, masks, and styling products for healthier, stronger hair.</p>
+                <div class="row-meta">30+ Products • ★★★★★ • Updated Weekly</div>
+                <ul class="row-list">
+                    <li>✓ Shampoo</li><li>✓ Conditioner</li><li>✓ Hair Oil</li><li>✓ Hair Mask</li>
+                </ul>
+                <a href="../pages/haircare.html" class="btn-link">View Haircare Collection →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="index.html#picks">Best Picks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/bellamonroeofficial?igsh=MXkwM2NkcDZlcnFicg==">Instagram</a></li>
+                        <li><a href="https://pin.it/3jK0f5f7x">Pinterest</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Affiliate Disclosure</h4>
+                    <p style="font-size: 0.8rem; color: #777;">
+                        Glow Beauty is reader-supported. We may earn a commission when you buy through our links.
+                    </p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Glow Beauty Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

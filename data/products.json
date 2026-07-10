@@ -1,0 +1,127 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "skincare",
+      "slug": "minimalist-vitamin-c-serum",
+      "name": "Minimalist Vitamin C Serum",
+      "brand": "Minimalist",
+      "price": "₹699",
+      "rating": 4.8,
+      "image": "../images/61vmEu4MuZL._SL1500_.jpg",
+      "description": "Brightens skin and reduces dark spots.",
+      "features": [
+        "Brightens skin",
+        "Reduces pigmentation",
+        "Suitable for beginners"
+      ],
+      "affiliate_link": "https://link.amazon/B0ifWJyAu"
+    },
+    {
+      "id": 2,
+      "category": "skincare",
+      "slug": "Minimalist Vitamin C 10% Face Serum",
+      "name": "Minimalist Vitamin C 10% Face Serum",
+      "brand": "Minimalist",
+      "price": "₹999",
+      "rating": 4.7,
+      "image": "../images/images (1).jpeg",
+      "description": "Short product description.",
+      "features": [
+        "Overnight Skin Revival for Visible Glow",
+        "Japanese Sake for Brightening & Even Tone",
+        "Vitamin C to Boost Radiance & Skin Health"
+      ],
+      "affiliate_link": "https://link.amazon/B0ahqGeuN"
+    },
+      {
+      "id": 3,
+      "category": "makeup",
+      "slug": "HYUE Velvette Kiss Matte Bullet Lipstick",
+      "name": "HYUE Velvette Kiss Matte Bullet Lipstick",
+      "brand": "HYUE",
+      "price": "₹999",
+      "rating": 4.6,
+      "image": "../images/71Xk8ObeATL._SL1500_.jpg",
+      "description": "Short description of the product.",
+      "features": [
+        "FEATHER LIGHT TEXTURE",
+        "HIGH IMPACT COLOR ",
+        "LONG WEARING FORMULA"
+      ],
+      "affiliate_link": "https://link.amazon/B0eBl0k2h"
+    },
+      {
+      "id": 4,
+      "category": "haircare",
+      "slug": "kerastase-gloss-absolu-shampoo",
+      "name": "Kérastase Gloss Absolu Anti-Frizz Shampoo For Bouncy Glossy Hair ",
+      "brand": "Kérastase",
+      "price": "₹999",
+      "rating": 4.7,
+      "image": "../images/61AueWpVq+L._AC_UL480_FMwebp_QL65_.webp",
+      "description": "A short SEO-friendly product description.",
+      "features": [
+        "Deeply hydrates the skin",
+        "Improves skin texture",
+        "Reduces dark spots",
+        "Lightweight and non-greasy",
+        "Suitable for all skin types",
+        "Dermatologically tested"
+      ],
+      "affiliate_link": "https://link.amazon/B0gMA4PlT"
+    },
+     {
+      "id": 1,
+      "category": "haircare",
+      "slug": "minimalist-vitamin-c-serum-10-percent",
+      "name": "Minimalist Vitamin C Face Serum 10%",
+      "brand": "Minimalist",
+      "price": "₹699",
+      "rating": 4.8,
+      "image": "../images/61-E4RH9cDL._SL1500_.jpg",
+      "description": "Brightens skin, reduces pigmentation, and improves overall skin tone.",
+      "features": [
+        "10% Ethyl Ascorbic Acid (Vitamin C)",
+        "Fades dark spots and acne marks",
+        "Boosts skin radiance",
+        "Improves uneven skin tone",
+        "Lightweight and fast-absorbing",
+        "Suitable for all skin types",
+        "Fragrance-free formula",
+        "Dermatologically tested"
+      ],
+      "affiliate_link": "https://link.amazon/B03cQZwJH"
+    },
+      {
+      "id": 1,
+      "category": "haircare",
+      "slug": "soulflower-rosemary-redensyl-hair-growth-serum",
+      "name": "Soulflower Rosemary Redensyl Hair Growth Serum",
+      "brand": "Soulflower",
+      "price": "₹1,275",
+      "rating": 4.5,
+      "image": "../images/61oQHnhKY6L._SL1200_.jpg",
+      "description": "A lightweight, fragrance-free hair growth serum enriched with Rosemary, Redensyl, AnaGain, and MelanoGray to reduce hair fall, promote new hair growth, improve hair density, and help minimize premature greying.",
+      "features": [
+        "Promotes healthy hair growth",
+        "Helps reduce hair fall and thinning",
+        "Boosts hair density and thickness",
+        "Supports stronger hair follicles",
+        "Helps reduce premature greying",
+        "Powered by Rosemary, Redensyl, AnaGain & MelanoGray",
+        "Contains Biotin, Caffeine, Keratin, Rice Water & Tea Tree Oil",
+        "Lightweight, non-greasy leave-in formula",
+        "Suitable for both men and women",
+        "Suitable for all hair types",
+        "Fragrance-free formula",
+        "Free from parabens, silicones, sulphates, mineral oils, and gluten",
+        "Vegan and cruelty-free",
+        "Dermatologically tested"
+      ],
+      "affiliate_link": "https://link.amazon/B00rT0wtt"
+    }
+
+    
+  ]
+}
